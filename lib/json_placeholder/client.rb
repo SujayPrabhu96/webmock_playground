@@ -13,7 +13,7 @@ module JsonPlaceholder
     def get_todos
       response = @client.get("/todos")
       if response.status == 200
-        JSON.parse(response.body)
+        JSON.parse(response.body)["todos"]
       else
         raise "Failed to fetch todos"
       end
